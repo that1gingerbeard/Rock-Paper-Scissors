@@ -6,19 +6,18 @@ const scissorsButton = document.getElementById('scissors');
 const playerChoiceElement = document.getElementById('player-choice');
 
 // Set computer to randomly pick between rock, paper, scissors
-function getComputerChoice (){
+function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors',];
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices [randomIndex];
 }
 
-console.log(getComputerChoice());
-// make rock beat scissors
+function getHumanChoice() {
+    let choice = prompt('Rock, Paper, or Scissors?').toLowerCase();
+    while (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors');
+    return choice;
+}
 
-// make paper beat rock
+let humanScore = 0
 
-// make scissors beat paper
-
-// make background color red with try again if wrong
-
-// make background color green with congraulations you won if right
+let computerScore = 0 
