@@ -18,6 +18,27 @@ function getHumanChoice() {
     return choice;
 }
 
-let humanScore = 0
+let humanScore = 0;
 
-let computerScore = 0 
+let computerScore = 0;
+
+function determineWinner () {
+    if (getHumanChoice === getComputerChoice) { 
+        return 'It\'s a tie!'
+    }
+    if (
+       (getHumanChoice === 'rock' && getComputerChoice ==='scissors')||
+       (getHumanChoice === 'paper' && getComputerChoice === 'rock')||
+       (getHumanChoice === 'scissors' && getComputerChoice === 'paper')
+    ) {
+       return 'You Win!'
+    } else {
+        return 'Computer Wins!'
+    }
+}
+
+function playRound (humanChoice, computerChoice) {
+    humanChoice = getHumanChoice().toLowerCase
+    console.log('Human Choice: ' + getHumanChoice);
+    console.log('Computer Choice: ' + getComputerChoice);
+}
