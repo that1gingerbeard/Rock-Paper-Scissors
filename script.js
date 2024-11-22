@@ -1,11 +1,5 @@
 console.log('Hello World!')
 
-const rockButton = document.getElementById('rock');
-const paperButton = document.getElementById('paper');
-const scissorsButton = document.getElementById('scissors');
-const playerChoiceElement = document.getElementById('player-choice');
-
-// Set computer to randomly pick between rock, paper, scissors
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors',];
     const randomIndex = Math.floor(Math.random() * choices.length);
@@ -13,8 +7,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let choice = prompt('Rock, Paper, or Scissors?').toLowerCase();
-    while (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors');
+    let choice = prompt('Rock, Paper, or Scissors').toLowerCase();
     return choice;
 }
 
@@ -22,23 +15,30 @@ let humanScore = 0;
 
 let computerScore = 0;
 
-function determineWinner () {
-    if (getHumanChoice === getComputerChoice) { 
-        return 'It\'s a tie!'
-    }
-    if (
-       (getHumanChoice === 'rock' && getComputerChoice ==='scissors')||
-       (getHumanChoice === 'paper' && getComputerChoice === 'rock')||
-       (getHumanChoice === 'scissors' && getComputerChoice === 'paper')
-    ) {
-       return 'You Win!'
-    } else {
-        return 'Computer Wins!'
-    }
-}
-
-function playRound (humanChoice, computerChoice) {
-    humanChoice = getHumanChoice().toLowerCase
+function playRound (getHumanChoice, getComputerChoice) {
     console.log('Human Choice: ' + getHumanChoice);
     console.log('Computer Choice: ' + getComputerChoice);
+    if  (getHumanChoice == getComputerChoice) 
+        {console.log('It\'s a tie!')}; 
+    if  (getHumanChoice == 'rock' && getComputerChoice == 'scissors' || getHumanChoice == 'paper' && getComputerChoice == 'rock' || getHumanChoice == 'scissors' && getComputerChoice == 'paper') 
+        {console.log ('You Win!'); humanScore++} ;
+    if  (getHumanChoice == 'rock' && getComputerChoice == 'paper' || getHumanChoice == 'paper' && getComputerChoice == 'scissors' || getHumanChoice == 'scissors' && getComputerChoice == 'rock') 
+        {console.log ('Computer Wins!'); computerScore++} ;
+    console.log('Human Score: ' + humanScore)
+    console.log('Computer Score: ' + computerScore)
+    }
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+playRound (humanChoice, computerChoice);
+
+function playGame() {
+    for (let round = 1; round <= 5; round++) {
+        console.log(`Round ${round};`)
+    }
+
+    const roundResult = playRound(humanChoice, computerChoice);
 }
+
+playGame();
