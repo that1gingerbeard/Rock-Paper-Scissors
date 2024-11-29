@@ -20,9 +20,11 @@ function playRound (getHumanChoice, getComputerChoice) {
     console.log('Computer Choice: ' + getComputerChoice);
     if  (getHumanChoice == getComputerChoice) 
         {console.log('It\'s a tie!')}; 
-    if  (getHumanChoice == 'rock' && getComputerChoice == 'scissors' || getHumanChoice == 'paper' && getComputerChoice == 'rock' || getHumanChoice == 'scissors' && getComputerChoice == 'paper') 
+    if  (getHumanChoice == 'rock' && getComputerChoice == 'scissors' || getHumanChoice == 'paper' && getComputerChoice == 'rock' ||
+         getHumanChoice == 'scissors' && getComputerChoice == 'paper') 
         {console.log ('You Win!'); humanScore++} ;
-    if  (getHumanChoice == 'rock' && getComputerChoice == 'paper' || getHumanChoice == 'paper' && getComputerChoice == 'scissors' || getHumanChoice == 'scissors' && getComputerChoice == 'rock') 
+    if  (getHumanChoice == 'rock' && getComputerChoice == 'paper' || getHumanChoice == 'paper' && getComputerChoice == 'scissors' || 
+        getHumanChoice == 'scissors' && getComputerChoice == 'rock') 
         {console.log ('Computer Wins!'); computerScore++} ;
     console.log('Human Score: ' + humanScore)
     console.log('Computer Score: ' + computerScore)
@@ -33,12 +35,8 @@ const computerChoice = getComputerChoice();
 
 playRound (humanChoice, computerChoice);
 
-function playGame() {
-    for (let round = 1; round <= 5; round++) {
-        console.log(`Round ${round};`)
-    }
-
-    const roundResult = playRound(humanChoice, computerChoice);
+function playGame(playRound) {
+    
 }
 
 playGame();
