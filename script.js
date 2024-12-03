@@ -35,8 +35,12 @@ const computerChoice = getComputerChoice();
 
 playRound (humanChoice, computerChoice);
 
-function playGame(playRound) {
-    
+function playGame() {
+    for(let i=1; i<=5; i++){
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        playRound (humanChoice, computerChoice);
+    }
 }
 
 playGame();
