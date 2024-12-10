@@ -1,0 +1,14 @@
+.buttons{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.rock, .paper, .scissors{
+    background-color: red;
+    border-radius: 45%;
+    margin-bottom: 8px;
+    width: 100px;
+}
